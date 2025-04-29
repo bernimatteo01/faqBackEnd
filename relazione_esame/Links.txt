@@ -1,0 +1,7 @@
+Backend: https://github.com/bernimatteo01/faqBackEnd
+
+Frontend: https://github.com/bernimatteo01/faqFrontEnd
+
+Trello: https://trello.com/invite/b/6810075603e0b362f27a108e/ATTI92576a56289b63b570d9e728e5f2f6488A1717E3/faq
+
+Dati login: admin:admin123
