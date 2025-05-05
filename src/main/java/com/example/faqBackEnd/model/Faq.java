@@ -3,24 +3,32 @@ package com.example.faqBackEnd.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * Entità JPA che rappresenta una FAQ (Frequently Asked Question).
+ * Viene mappata sulla tabella "faq" del database.
+ */
 @Entity
 @Table(name = "faq")
 public class Faq {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // Identificativo univoco (chiave primaria)
 
-    private String domanda;
+    private String domanda; // Testo della domanda
 
-    private String risposta;
+    private String risposta; // Testo della risposta
 
     @Column(name = "data_creazione", updatable = false)
-    private LocalDateTime dataCreazione;
+    private LocalDateTime dataCreazione; // Data di creazione (non modificabile)
 
     @Column(name = "data_modifica")
-    private LocalDateTime dataModifica;
+    private LocalDateTime dataModifica; // Data dell'ultima modifica
 
+    /**
+     * Metodo eseguito automaticamente prima dell'inserimento della riga nel DB.
+     * Imposta la data di creazione e la data di modifica al momento corrente.
+     */
     @PrePersist
     public void onCreate() {
         if (dataCreazione == null) {
@@ -29,6 +37,10 @@ public class Faq {
         dataModifica = LocalDateTime.now();
     }
 
+    /**
+     * Metodo eseguito automaticamente prima di ogni aggiornamento della riga nel DB.
+     * Aggiorna la data di modifica.
+     */
     @PreUpdate
     public void onUpdate() {
         dataModifica = LocalDateTime.now();
