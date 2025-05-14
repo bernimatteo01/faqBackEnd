@@ -21,6 +21,7 @@ public class FaqController {
 
     /**
      * Ottiene tutte le FAQ disponibili.
+     * 
      * @return lista completa delle FAQ
      */
     @GetMapping
@@ -30,6 +31,7 @@ public class FaqController {
 
     /**
      * Ottiene una singola FAQ tramite ID.
+     * 
      * @param id identificativo della FAQ da recuperare
      * @return FAQ corrispondente all'ID, se presente
      */
@@ -41,6 +43,7 @@ public class FaqController {
     /**
      * Crea una nuova FAQ.
      * Richiede un oggetto FAQ nel corpo della richiesta.
+     * 
      * @param faq FAQ da inserire
      * @return la FAQ salvata con ID assegnato
      */
@@ -51,7 +54,8 @@ public class FaqController {
 
     /**
      * Aggiorna una FAQ esistente identificata dall'ID.
-     * @param id ID della FAQ da aggiornare
+     * 
+     * @param id  ID della FAQ da aggiornare
      * @param faq oggetto contenente i nuovi dati
      * @return la FAQ aggiornata
      */
@@ -62,6 +66,7 @@ public class FaqController {
 
     /**
      * Elimina una FAQ tramite ID.
+     * 
      * @param id identificativo della FAQ da rimuovere
      */
     @DeleteMapping("/{id}")

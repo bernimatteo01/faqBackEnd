@@ -14,7 +14,8 @@ class FaqBackEndApplicationTests {
     /**
      * Test base generato automaticamente da Spring Boot.
      * Se il contesto si carica correttamente, il test passa.
-     * In caso contrario (es. configurazione errata o bean mancanti), il test fallisce.
+     * In caso contrario (es. configurazione errata o bean mancanti), il test
+     * fallisce.
      */
     @Test
     void contextLoads() {

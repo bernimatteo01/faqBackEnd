@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- * Entità JPA che rappresenta una FAQ (Frequently Asked Question).
+ * Entità JPA che rappresenta una FAQ.
  * Viene mappata sulla tabella "faq" del database.
  */
 @Entity
@@ -38,7 +38,8 @@ public class Faq {
     }
 
     /**
-     * Metodo eseguito automaticamente prima di ogni aggiornamento della riga nel DB.
+     * Metodo eseguito automaticamente prima di ogni aggiornamento della riga nel
+     * DB.
      * Aggiorna la data di modifica.
      */
     @PreUpdate

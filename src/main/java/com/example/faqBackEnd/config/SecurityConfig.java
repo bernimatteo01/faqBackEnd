@@ -14,6 +14,7 @@ public class SecurityConfig {
 
     /**
      * Definizione del filtro di sicurezza principale per le richieste HTTP.
+     * 
      * @param http Oggetto HttpSecurity fornito da Spring per configurare le regole.
      * @return il filtro di sicurezza configurato.
      * @throws Exception in caso di errore nella configurazione.
@@ -21,23 +22,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            // Disabilita la protezione CSRF (utile per API REST stateless)
-            .csrf(csrf -> csrf.disable())
+                // Disabilita la protezione CSRF (utile per API REST stateless)
+                .csrf(csrf -> csrf.disable())
 
-            // Definizione delle regole di autorizzazione
-            .authorizeHttpRequests(auth -> auth
-                // Permette accesso pubblico a tutte le API che iniziano con /api/faq/
-                .requestMatchers("/api/faq/**").permitAll()
+                // Definizione delle regole di autorizzazione
+                .authorizeHttpRequests(auth -> auth
+                        // Permette accesso pubblico a tutte le API che iniziano con /api/faq/
+                        .requestMatchers("/api/faq/**").permitAll()
 
-                // Richiede autenticazione per tutte le richieste a /api/admin/
-                .requestMatchers("/api/admin/**").authenticated()
+                        // Richiede autenticazione per tutte le richieste a /api/admin/
+                        .requestMatchers("/api/admin/**").authenticated()
 
-                // Qualsiasi altra richiesta deve essere autenticata
-                .anyRequest().authenticated()
-            )
+                        // Qualsiasi altra richiesta deve essere autenticata
+                        .anyRequest().authenticated())
 
-            // Abilita autenticazione HTTP Basic (username/password base64 via header Authorization)
-            .httpBasic(customizer -> {});
+                // Abilita autenticazione HTTP Basic (username/password via header
+                // Authorization)
+                .httpBasic(customizer -> {
+                });
 
         // Costruisce e restituisce la configurazione finale
         return http.build();

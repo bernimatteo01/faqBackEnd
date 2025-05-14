@@ -10,14 +10,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Configurazione dell'utente admin e del sistema di autenticazione in memoria.
- * Questa configurazione è usata da Spring Security per verificare le credenziali.
+ * Questa configurazione è usata da Spring Security per verificare le
+ * credenziali.
  */
 @Configuration
 public class UserConfig {
 
     /**
-     * Crea un utente admin in memoria con username "admin" e password "admin123" (criptata).
-     * Questo è utile per ambienti di sviluppo e test.
+     * Crea un utente admin in memoria con username "admin" e password "admin123"
+     * (criptata).
      * 
      * @param passwordEncoder il bean PasswordEncoder usato per criptare la password
      * @return un UserDetailsService con l'utente configurato

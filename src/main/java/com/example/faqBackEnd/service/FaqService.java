@@ -29,6 +29,7 @@ public class FaqService {
 
     /**
      * Recupera l'elenco completo delle FAQ.
+     * 
      * @return lista di FAQ
      */
     public List<Faq> findAll() {
@@ -37,6 +38,7 @@ public class FaqService {
 
     /**
      * Recupera una singola FAQ tramite ID.
+     * 
      * @param id ID della FAQ
      * @return Optional contenente la FAQ se esiste
      */
@@ -46,6 +48,7 @@ public class FaqService {
 
     /**
      * Salva una nuova FAQ nel database.
+     * 
      * @param faq FAQ da salvare
      * @return la FAQ salvata
      */
@@ -55,14 +58,15 @@ public class FaqService {
 
     /**
      * Aggiorna una FAQ esistente mantenendo la data di creazione.
-     * @param id ID della FAQ da aggiornare
+     * 
+     * @param id         ID della FAQ da aggiornare
      * @param updatedFaq dati aggiornati
      * @return la FAQ modificata
      */
     public Faq updateFaq(Long id, Faq updatedFaq) {
         Faq existingFaq = faqRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("FAQ non trovata con ID: " + id));
-    
+
         // Aggiorna solo i campi modificabili
         existingFaq.setDomanda(updatedFaq.getDomanda());
         existingFaq.setRisposta(updatedFaq.getRisposta());
@@ -73,6 +77,7 @@ public class FaqService {
 
     /**
      * Elimina una FAQ tramite il suo ID.
+     * 
      * @param id ID della FAQ da eliminare
      */
     public void delete(Long id) {
